@@ -60,12 +60,16 @@ func registerAPIRouter(mux *router.Router, api objectAPIHandlers) {
 	bucket.Methods("GET").HandlerFunc(api.GetBucketLocationHandler).Queries("location", "")
 	// GetBucketPolicy
 	bucket.Methods("GET").HandlerFunc(api.GetBucketPolicyHandler).Queries("policy", "")
+	// GetBucketNotification
+	bucket.Methods("GET").HandlerFunc(api.GetBucketNotificationHandler).Queries("notification", "")
 	// ListMultipartUploads
 	bucket.Methods("GET").HandlerFunc(api.ListMultipartUploadsHandler).Queries("uploads", "")
 	// ListObjects
 	bucket.Methods("GET").HandlerFunc(api.ListObjectsHandler)
 	// PutBucketPolicy
 	bucket.Methods("PUT").HandlerFunc(api.PutBucketPolicyHandler).Queries("policy", "")
+	// PutBucketNotification
+	bucket.Methods("PUT").HandlerFunc(api.PutBucketNotificationHandler).Queries("notification", "")
 	// PutBucket
 	bucket.Methods("PUT").HandlerFunc(api.PutBucketHandler)
 	// HeadBucket
